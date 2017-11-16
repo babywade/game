@@ -46,4 +46,10 @@ public abstract class FlyingObjects {
 	public void setImage(BufferedImage image) {
 		this.image = image;
 	}
+	
+	public abstract boolean outOfBounds();
+	
+	public abstract void moveX();
+	public abstract void moveY();
+	
 }

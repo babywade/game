@@ -1,10 +1,21 @@
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.awt.event.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class ShootGame extends JPanel {
+	
+	private Hero hero = new Hero(100, 400, 3);
+//	private Bullet[] bullets = {};
+//	private FlyingObjects[] flyings = {};
+	private int state;
+	private static final int START = 0;
+	private static final int RUNNING = 1;
+	private static final int PAUSE = 2;
+	private static final int GAME_OVER = 3;
+	
 	public static BufferedImage background;
 	public static BufferedImage start;
 	public static BufferedImage airplane;
@@ -41,14 +52,18 @@ public class ShootGame extends JPanel {
 		paintFlyingObjects(g); // 画飞行物
 		paintScore(g); // 画分数
 		paintState(g); // 画游戏状态
+		
 	}
 	
 	public void paintHero(Graphics g) {
-		
+		g.drawImage(hero.getImage(), hero.getX(), hero.getY(), null);
 	}
 	
 	public void paintBullets(Graphics g) {
-		
+//		for (int i = 0; i < bullets.length; i++) {
+//			Bullet b = bullets[i];
+//			g.drawImage(b.getImage(), b.getX(), b.getY, observer)
+//		}
 	}
 	
 	public void paintFlyingObjects(Graphics g) {
@@ -61,5 +76,21 @@ public class ShootGame extends JPanel {
 	
 	public void paintState(Graphics g) {
 		
+	}
+	
+	public void action() {
+		KeyAdapter l = new KeyAdapter() {
+			public void KeyPressed (KeyEvent e) {
+				
+			}
+			
+			public void KeyReleased (KeyEvent e) {
+				
+			}
+			
+			public void KeyTyped (KeyEvent e) {
+				
+			}
+		}
 	}
 }
